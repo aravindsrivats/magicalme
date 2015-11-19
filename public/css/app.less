@@ -1,67 +1,134 @@
+@import 'colors';
+@defaultFont: 'Helvetica Neue', 'Helvetica', 'Myraid Pro', 'Arial', sans-serif;
+@font-face {
+  font-family: 'NexaBold';
+  src: url(../assets/fonts/nexa_bold.eot);
+  src: url(../assets/fonts/nexa_bold.eot?#iefix) format('embedded-opentype'), url(../assets/fonts/nexa_bold.woff2) format('woff2'), url(../assets/fonts/nexa_bold.woff) format('woff'), url(../assets/fonts/nexa_bold.ttf) format('truetype'), url(../assets/fonts/nexa_bold.svg#nexa_boldregular) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 body {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: @defaultFont;
+  font-size: 100%;
 }
 a {
+  text-decoration: none;
+  color: #fff;
+  background: transparent;
+  &:focus {
     text-decoration: none;
-    color: #fff;
-    background: transparent;
-    &:focus {
-        text-decoration: none;
-    }
-    &:active,
-    &:hover {
-        text-decoration: none;
-        outline: 0;
-    }
+  }
+  &:active,
+  &:hover {
+    text-decoration: none;
+    outline: 0;
+  }
 }
 section.scrolls {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  height: 1px;
+  .overlay {
     position: relative;
     width: 100%;
+    height: 100%;
     min-height: 100%;
-    height: 1px;
-    .overlay {
-        width: 100%;
-        height: 100%;
-        min-height: 100%;
-        overflow: auto;
-        background: rgba(0,0,0,0.6);
-    }
+    overflow: auto;
+    background: @overlayBackground;
+  }
 }
 #magical-me {
-    background: url(../assets/magical_me.jpg) no-repeat 0 0 fixed;
-    background-size: cover;
+  background: url(../assets/magical_me.jpg) no-repeat 0 0 fixed;
+  background-size: cover;
 }
 #who-am-i {
-    background: url(../assets/who_am_i.png) no-repeat 0 0 fixed;
-    background-size: cover;
+  background: url(../assets/who_am_i.png) no-repeat 0 0 fixed;
+  background-size: cover;
 }
 #travel-trilogy {
-    background: url(../assets/travel_trilogy.jpg) no-repeat 0 0 fixed;
-    background-size: cover;
+  background: url(../assets/travel_trilogy.jpg) no-repeat 0 0 fixed;
+  background-size: cover;
+}
+h1 {
+  font-family: 'NexaBold';
+  font-size: 4.5em;
+  text-align: center;
+  padding: 20% 0 0;
+  color: @primaryColor;
+  text-shadow: 1px 1px @textColor, inset 1px 2px @lightColor;
+}
+.title {
+  display: block;
+  font-family: @defaultFont;
+  font-size: 1.3em;
+  text-align: center;
+  color: @secondaryColor;
+}
+nav {
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  height: 76px;
+  text-align: center;
+  z-index: 777;
+  background: @navBackground;
+  ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: auto;
+    li {
+      display: inline-block;
+      padding: 30px 20px;
+      text-align: center;
+      cursor: pointer;
+      margin: 0;
+      font-family: @defaultFont;
+      font-size: 1em;
+      font-weight: lighter;
+      -webkit-transition: background 0.3s ease;
+      -moz-transition: background 0.3s ease;
+      -o-transition: background 0.3s ease;
+      -ms-transition: background 0.3s ease;
+      transition: background 0.3s ease;
+      &:hover {
+        background: @primaryColor;
+        a {
+          font-weight: normal;
+        }
+      }
+      a {
+        padding: 30px 20px;
+        color: @primaryTextColor;
+      }
+    }
+  }
 }
 .clearfix {
-    zoom: 1;
-    &:before,
-    &:after {
-        content: "";
-        display: table;
-    }
-    &:after {
-        clear: both;
-    }
+  zoom: 1;
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
 }
