@@ -83,12 +83,16 @@ h1 {
 }
 nav {
   position: absolute;
-  bottom: -1px;
+  bottom: 0px;
   width: 100%;
   height: 76px;
   text-align: center;
   z-index: 777;
   background: @navBackground;
+  &.fixed {
+    position: fixed;
+    top: 0;
+  }
   ul {
     list-style: none;
     margin: 0 auto;
