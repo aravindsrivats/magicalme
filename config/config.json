@@ -1,28 +1,28 @@
 {
-    "port": 5000,
-    "express": {
-        "view cache": false,
-        "view engine": "jade",
-        "views": "path:./public/views/"
-    },
-    "view engines": {
-        "jade": {
-            "module": "jade",
-            "renderer": "__express"
-        }
-    },
-    "middleware": {
-        "static": {
-            "module": {
-                "arguments": ["path:./.build"]
-            }
-        },
-        "router": {
-            "module": {
-                "arguments": [{
-                    "directory": "path:./controllers"
-                }]
-            }
-        }
+  "port": 8000,
+  "express": {
+    "view cache": false,
+    "view engine": "jade",
+    "views": "path:./public/views/"
+  },
+  "view engines": {
+    "jade": {
+      "module": "jade",
+      "renderer": "__express"
     }
+  },
+  "middleware": {
+    "static": {
+      "module": {
+        "arguments": ["path:./.build"]
+      }
+    },
+    "router": {
+      "module": {
+        "arguments": [{
+          "directory": "path:./controllers"
+        }]
+      }
+    }
+  }
 }
