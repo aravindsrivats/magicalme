@@ -4,19 +4,43 @@ html
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(http-equiv='Content-Language', content='en')
+    meta(name='description', content=message)
+    meta(name='author', content='Aravind Srivatsan')
+    meta(name='keywords', content='porfolio,works,aboutme,magicalme,aravind,aravindsrivats')
     title #{title}
     link(href='../css/app.css', rel='stylesheet')
   body
     section.scrolls#magical-me
       div.overlay
         h1 aravind srivatsan
-        span.title web developer.  mobile developer.  ui/ux designer.
+        span.title full-stack developer.  android developer.  ui/ux designer.
         nav
           ul
             li #[a(href='#who-am-i') magical me]
-            li #[a(href='#travel-trilogy') coffee time]
+            li #[a(href='#coffee-time') coffee time]
             li #[a(href='#talk-to-me') talk to me]
     section.scrolls#who-am-i
-    section.scrolls#travel-trilogy
+      h2 who am i?
+      div.content
+    section.scrolls#coffee-time
       div.overlay
+        div.content
+          div.grind
+            div.beans
+              div.bean-picture
+                img(src='../assets/thumbs/1.jpg')
+              div.bean-picture
+                img(src='../assets/thumbs/2.jpg')
+              div.bean-picture
+                img(src='../assets/thumbs/3.jpg')
+              div.bean-picture
+                img(src='../assets/thumbs/4.jpg')
+              div.bean-picture
+                img(src='../assets/thumbs/5.jpg')
+              div.bean-picture
+                img(src='../assets/thumbs/6.jpg')
+              div.bean-picture
+                img(src='../assets/thumbs/7.jpg')
+              div.bean-picture
+                img(src='../assets/thumbs/8.jpg')
     script(data-main='../js/app.js' src='/components/requirejs/require.js')

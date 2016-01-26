@@ -62,7 +62,7 @@ section.scrolls {
   background: url(../assets/who_am_i.png) no-repeat 0 0 fixed;
   background-size: cover;
 }
-#travel-trilogy {
+#coffee-time {
   background: url(../assets/travel_trilogy.jpg) no-repeat 0 0 fixed;
   background-size: cover;
 }
@@ -83,7 +83,7 @@ h1 {
 }
 nav {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
   height: 76px;
   text-align: center;
@@ -123,6 +123,29 @@ nav {
         color: @primaryTextColor;
       }
     }
+  }
+}
+.content {
+  padding: 5%;
+  overflow: auto;
+}
+.grind {
+  position: relative;
+  margin: 0 auto;
+}
+.beans {
+  width: 270px;
+  padding: 10px;
+}
+.bean-picture {
+  display: block;
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+  img {
+    display: block;
+    max-width: 100%;
   }
 }
 .clearfix {

@@ -1,7 +1,7 @@
 'use strict';
 
 require(['config'], function(config) {
-  require(['jquery'], function($, sticky) {
+  require(['jquery', 'masonry'], function($, Masonry, sticky) {
     var app = {
       initialize: function() {
         $(document).ready(function(e) {
@@ -11,13 +11,18 @@ require(['config'], function(config) {
             viewportHeight = $(window).height();
           });
 
+          new Masonry('.beans', {
+            itemSelector: '.bean-picture',
+            isFitWidth: true
+          });
+
           $(document).on('scroll', function(e) {
             if ($('body').scrollTop() > viewportHeight - navHeight) {
               $('nav').addClass('fixed');
             } else {
               $('nav').removeClass('fixed');
             }
-        });
+          });
 
           $('a[href*=#]:not([href=#])').click(function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
