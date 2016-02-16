@@ -22,3 +22,10 @@ test/report/coverage
 ehthumbs.db
 Icon?
 Thumbs.db
+
+public/components/jquery/.bower.json
+public/components/jquery/MIT-LICENSE.txt
+public/components/jquery/bower.json
+public/components/jquery/dist/jquery.js
+public/components/jquery/dist/jquery.min.map
+public/components/jquery/src/
