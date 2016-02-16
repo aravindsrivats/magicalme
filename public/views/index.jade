@@ -37,6 +37,10 @@ html
                     ul
                       each stack in project.stack
                         li(class='fa fa-lg fa-'+stack)
+          div.preview
+            button.close 
+              p.fa.fa-lg.fa-times 
+                span.hidden Close
             
 
     script(data-main='../js/app.js' src='/components/requirejs/require.js')
