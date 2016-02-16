@@ -1,11 +1,12 @@
 'use strict';
 
+var PROJECTS = require('./projects');
+
 module.exports = function(info) {
-  var model = {
+  return {
     page: 'index',
     title: info.title,
-    message: info.message
+    message: info.message,
+    projects: PROJECTS
   };
-
-  return model;
 };

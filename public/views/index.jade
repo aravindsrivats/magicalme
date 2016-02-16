@@ -9,6 +9,7 @@ html
     meta(name='keywords', content='porfolio,works,aboutme,magicalme,aravind,aravindsrivats')
     title #{title}
     link(href='../css/app.css', rel='stylesheet')
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', rel='stylesheet')
   body
     section.scrolls#magical-me
       div.overlay
@@ -27,20 +28,15 @@ html
         div.content
           div.grind
             div.beans
-              div.bean-picture
-                img(src='../assets/thumbs/1.jpg')
-              div.bean-picture
-                img(src='../assets/thumbs/2.jpg')
-              div.bean-picture
-                img(src='../assets/thumbs/3.jpg')
-              div.bean-picture
-                img(src='../assets/thumbs/4.jpg')
-              div.bean-picture
-                img(src='../assets/thumbs/5.jpg')
-              div.bean-picture
-                img(src='../assets/thumbs/6.jpg')
-              div.bean-picture
-                img(src='../assets/thumbs/7.jpg')
-              div.bean-picture
-                img(src='../assets/thumbs/8.jpg')
+              each project in projects
+                div.bean-picture
+                  div.img(style='background: url(../assets/thumbs/' + project.img + ') no-repeat;')
+                  div.desc
+                    h3= project.title
+                    p= project.description
+                    ul
+                      each stack in project.stack
+                        li(class='fa fa-lg fa-'+stack)
+            
+
     script(data-main='../js/app.js' src='/components/requirejs/require.js')
