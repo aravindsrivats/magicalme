@@ -36,21 +36,6 @@ require(['config'], function(config) {
               }
             }
           });
-
-          $('.bean-picture').click(function() {
-            var img = $('.img', this).clone();
-            img.attr('style', img.attr('style')+' background-size: contain; background-position: center center;');
-            img.appendTo('.preview').removeClass('img').addClass('clone');
-
-            $('.desc', this).clone().appendTo('.preview').removeClass('desc').addClass('description');
-            $('.preview').addClass('open');
-          });
-
-          $('.close').click(function() {
-            $('.clone').remove();
-            $('.description').remove();
-            $('.preview').removeClass('open');
-          });
         });
       }
     };

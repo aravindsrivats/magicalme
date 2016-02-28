@@ -30,17 +30,13 @@ html
             div.beans
               each project in projects
                 div.bean-picture
-                  div.img(style='background: url(../assets/thumbs/' + project.img + ') no-repeat;')
+                  div.img(style='background: url(../assets/thumbs/' + project.img + ') no-repeat; background-position: 10% 30%;')
                   div.desc
                     h3= project.title
                     p= project.description
                     ul
                       each stack in project.stack
                         li(class='fa fa-lg fa-'+stack)
-          div.preview
-            button.close 
-              p.fa.fa-lg.fa-times 
-                span.hidden Close
             
 
     script(data-main='../js/app.js' src='/components/requirejs/require.js')
