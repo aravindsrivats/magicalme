@@ -63,6 +63,77 @@ html
               span.icon.fa
             li#projects
               | projects.json
-              span.icon.fa   
+              span.icon.fa
+        div.scroll-area
+          div.scroll#0
+            div.line-num
+              p.higher  1
+              p 2
+              p 3
+              p 4
+              p 5
+              p 6
+              p 7
+              p 8
+            div.general 
+              p
+                span.tag &lt;p&gt;
+                | I am
+                span.tag &lt;span class='title'&gt;
+                span.title
+                  | aravind srivatsan
+                span.tag &lt;/span&gt; 
+                | and I develop awesome web applications and stunning mobile apps.  If you have a web/mobile application that requires a golden hand, you've come to the right place.  Take a look around to see my creations.
+                span.tag &lt;/p&gt;
+                | #[br]
+                | #[br]
+                | #[br]
+                span.tag &lt;p&gt;
+                | Find me at:
+                span.tag &lt;/p&gt;
+                | #[br]
+                span.tag &lt;a href='https://www.facebook.com/aravindsrivatsan' class='fa fa-facebook-official'&gt;
+                a(href='https://www.facebook.com/aravindsrivatsan' target='_blank')
+                  span.fa.fa-facebook-official.fa-lg
+                span.tag &lt;/a&gt;
+                | #[br]
+                span.tag &lt;a href='https://twitter.com/aravindsrivats' class='fa fa-twitter'&gt;
+                a(href='https://twitter.com/aravindsrivats' target='_blank')
+                  span.fa.fa-twitter.fa-lg
+                span.tag &lt;/a&gt;
+                | #[br]
+                span.tag &lt;a href='https://github.com/aravindsrivats' class='fa fa-github'&gt;
+                a(href='https://github.com/aravindsrivats' target='_blank')
+                  span.fa.fa-github.fa-lg
+                span.tag &lt;/a&gt;
+          div.scroll#1
+            div.general 
+              p
+              | [
+              each project, index in projects
+                | {
+                | #[br]
+                span.json-var
+                  | "title": "
+                  span.value
+                    = project.title
+                  | ",
+                | #[br]
+                span.json-var
+                  | "description": "
+                  span.value
+                    = project.description
+                  | ",
+                | #[br]
+                span.json-var
+                  | "link": "
+                  a(href=project.url target='_blank')  
+                    span.value
+                      = project.url
+                  | "
+                | #[br]
+                | },  
+              | ]
+          div.scroll#2
 
     script(data-main='../js/app.js' src='/components/requirejs/require.js')

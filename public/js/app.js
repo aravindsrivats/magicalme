@@ -4,26 +4,58 @@ require(['config'], function(config) {
   require(['jquery', 'masonry'], function($, Masonry, sticky) {
     var app = {
       initialize: function() {
-        $(document).ready(function(e) {
-          var viewportHeight = $(window).height();
-          var navHeight = $('nav').height();
-          $(window).resize(function() {
-            viewportHeight = $(window).height();
-          });
-
+        $(document).ready(function() {
           $('li:not(.disabled) > a').click(function() {
             $('li:not(.disabled) > a').removeClass('highlight');
-            if($('span').hasClass('arrow')) {
+            if ($('span', this).hasClass('arrow')) {
               $(this).parent().children('ul').slideToggle();
               $('span.arrow', this).toggleClass('fa-chevron-right').toggleClass('fa-chevron-down');
-              $(this).toggleClass('highlight');
             }
+            else {
+              var item = $(this).attr('href');
+              $('.title-bar ul li').removeClass('active');
+              $(item).show().addClass('active');
+              var position = $('.title-bar ul li').index($(item));
+              $('.scroll').removeClass('shown');
+              $('#' + position).addClass('shown');
+            }
+            $(this).toggleClass('highlight');
           });
 
-          $('li:not(.disabled) > a').click(function() {
-            var item = $(this).attr('href');
+          $('.title-bar ul li').click(function() {
             $('.title-bar ul li').removeClass('active');
-            $(item).show().addClass('active');
+            $(this).addClass('active');
+
+            var link = $(this).attr('id');
+            $('li:not(.disabled) > a').removeClass('highlight');
+            $('li:not(.disabled) > a[href$="#' + link + '"]').toggleClass('highlight');
+
+            var position = $('.title-bar ul li').index($(this));
+            $('.scroll').removeClass('shown');
+            $('#' + position).addClass('shown');
+          });
+
+          $('.title-bar ul li span').click(function(e) {
+            e.stopPropagation();
+            $(this).parent().removeClass('active').hide();
+            var link = $(this).parent().attr('id');
+            $('li:not(.disabled) > a[href$="#' + link + '"]').toggleClass('highlight');
+            var position = $('.title-bar ul li').index($(this).parent());
+            $('#' + position).removeClass('shown');
+
+            var prev = $(this).parent().prev();
+            var next = $(this).parent().next();
+            var select = null;
+            if(prev !== null && $(prev).is(':visible')) {
+              select = prev;
+            }
+            else if (next !== null && $(next).is(':visible')) {
+              select = next;
+            }
+            if (select !== null) {
+              link = $(select).attr('id');
+              $('li:not(.disabled) > a[href$="#' + link + '"]').trigger('click');
+            }
           });
 
           $('.title-bar ul li').hover(function() {
@@ -31,16 +63,7 @@ require(['config'], function(config) {
           }, function() {
             $('.icon', this).removeClass('fa-times');
           });
-
-          $('.title-bar ul li').click(function() {
-            $('.title-bar ul li').removeClass('active');
-            $(this).addClass('active');
-          });
-
-          $('.title-bar ul li span').click(function() {
-            $(this).parent().removeClass('active').hide();
-          });
-        })
+        });
       }
     };
     app.initialize();

@@ -19,6 +19,7 @@ body {
   height: 100%;
   font-size: 13px;
   color: #a8aaaf;
+  overflow: hidden;
   font-family: @defaultFont;
   font-size: 100%;
   background: #1c1d21;
@@ -32,6 +33,7 @@ a {
   }
   &:active,
   &:hover {
+    color: @primaryColor;
     text-decoration: none;
     outline: 0;
   }
@@ -123,7 +125,6 @@ section.scrolls {
   .title-bar {
     width: 100%;
     height: 50px;
-    z-index: 1000;
     font-family: @defaultFont;
     font-size: 13px;
     font-weight: normal;
@@ -135,6 +136,7 @@ section.scrolls {
       margin: 0;
       padding: 0;
       li {
+        display: none;
         position: relative;
         width: 150px;
         line-height: 50px;
@@ -149,6 +151,69 @@ section.scrolls {
         &.active {
           border-bottom: solid 2px @primaryColor;
         }
+      }
+    }
+  }
+  .scroll-area {
+    height: 100%;
+    width: 100%;
+    margin-top: 2px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    .scroll {
+      opacity: 0;
+      width: 98%;
+      min-height: 98%;
+      height: auto;
+      background: #1c1d21;
+      padding: 1%;
+      position: absolute;
+      font-size: 14px;
+      display: flex;
+      flex-direction: row;
+      line-height: 25px;
+      z-index: 600;
+      top: 0;
+      left: 0;
+      transition: 0.5s all ease;
+      .line-num {
+        width: 30px;
+        padding-left: 10px;
+        font-size: 14px;
+        line-height: 25px;
+        color: #515156;
+        p.higher {
+          line-height: 30px;
+        }
+      }
+      .general {
+        height: auto;
+        .tag {
+          color: #515156;
+        }
+        .title {
+          color: @primaryColor;
+          font-size: 24px;
+          font-weight: bold;
+        }
+        .json-var {
+          margin-left: 25px;
+        }
+        .value {
+          color: #fff;
+          transition: 0.3s all ease;
+        }
+        a:hover .value {
+          color: @primaryColor;
+        }
+        p {
+          width: 85%;
+        }
+      }
+      &.shown {
+        opacity: 1;
+        z-index: 601;
       }
     }
   }
