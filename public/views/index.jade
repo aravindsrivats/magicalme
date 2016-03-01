@@ -11,32 +11,58 @@ html
     link(href='../css/app.css', rel='stylesheet')
     link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', rel='stylesheet')
   body
-    section.scrolls#magical-me
-      div.overlay
-        h1 aravind srivatsan
-        span.title full-stack developer.  android developer.  ui/ux designer.
-        nav
+    div.wrapper
+      section.explorer
+        h1
+          span.fa.fa-chevron-down.fa-small.arrow
+          span.fa.fa-book
+          | magical.me
+        nav 
           ul
-            li #[a(href='#who-am-i') magical me]
-            li #[a(href='#coffee-time') coffee time]
-            li #[a(href='#talk-to-me') talk to me]
-    section.scrolls#who-am-i
-      h2 who am i?
-      div.content
-    section.scrolls#coffee-time
-      div.overlay
-        div.content
-          div.grind
-            div.beans
-              each project in projects
-                div.bean-picture
-                  div.img(style='background: url(../assets/thumbs/' + project.img + ') no-repeat; background-position: 10% 30%;')
-                  div.desc
-                    h3= project.title
-                    p= project.description
-                    ul
-                      each stack in project.stack
-                        li(class='fa fa-lg fa-'+stack)
-            
+            li.disabled
+              a 
+                span.fa.fa-chevron-right.fa-small.arrow
+                span.fa.fa-folder
+                | .build
+            li.disabled
+              a  
+                span.fa.fa-chevron-right.fa-small.arrow
+                span.fa.fa-folder
+                | .git
+            li
+              a(href='#magical-me')
+                span.fa
+                span.fa.fa-file-text-o
+                | magical-me
+            li#assets
+              a
+                span.fa.fa-chevron-right.fa-small.arrow
+                span.fa.fa-folder
+                | assets
+              ul
+                li
+                  a
+                    span.fa
+                    span.fa.fa-file-text-o
+                    | project# 1
+                li
+                  a
+                    span.fa
+                    span.fa.fa-file-text-o
+                    | project# 2
+            li
+              a(href='#projects')
+                span.fa
+                span.fa.fa-file-text-o
+                | projects.json
+      section.scrolls
+        div.title-bar
+          ul
+            li#magical-me
+              | magical-me
+              span.icon.fa
+            li#projects
+              | projects.json
+              span.icon.fa   
 
     script(data-main='../js/app.js' src='/components/requirejs/require.js')

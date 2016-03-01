@@ -11,32 +11,36 @@ require(['config'], function(config) {
             viewportHeight = $(window).height();
           });
 
-          new Masonry('.beans', {
-            itemSelector: '.bean-picture',
-            isFitWidth: true
-          });
-
-          $(document).on('scroll', function(e) {
-            if ($('body').scrollTop() > viewportHeight - navHeight) {
-              $('nav').addClass('fixed');
-            } else {
-              $('nav').removeClass('fixed');
+          $('li:not(.disabled) > a').click(function() {
+            $('li:not(.disabled) > a').removeClass('highlight');
+            if($('span').hasClass('arrow')) {
+              $(this).parent().children('ul').slideToggle();
+              $('span.arrow', this).toggleClass('fa-chevron-right').toggleClass('fa-chevron-down');
+              $(this).toggleClass('highlight');
             }
           });
 
-          $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-              var target = $(this.hash);
-              target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-              if (target.length) {
-                $('html,body').animate({
-                  scrollTop: target.offset().top
-                }, 1000);
-                return false;
-              }
-            }
+          $('li:not(.disabled) > a').click(function() {
+            var item = $(this).attr('href');
+            $('.title-bar ul li').removeClass('active');
+            $(item).show().addClass('active');
           });
-        });
+
+          $('.title-bar ul li').hover(function() {
+            $('.icon', this).addClass('fa-times');
+          }, function() {
+            $('.icon', this).removeClass('fa-times');
+          });
+
+          $('.title-bar ul li').click(function() {
+            $('.title-bar ul li').removeClass('active');
+            $(this).addClass('active');
+          });
+
+          $('.title-bar ul li span').click(function() {
+            $(this).parent().removeClass('active').hide();
+          });
+        })
       }
     };
     app.initialize();
