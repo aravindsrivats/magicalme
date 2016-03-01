@@ -1,7 +1,7 @@
 'use strict';
 
-require(['config'], function(config) {
-  require(['jquery', 'masonry'], function($, Masonry, sticky) {
+require(['config'], function() {
+  require(['jquery'], function($) {
     var app = {
       initialize: function() {
         $(document).ready(function() {

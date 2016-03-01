@@ -3,7 +3,6 @@
 requirejs.config({
   waitSeconds: 0,
   paths: {
-    jquery: '../components/jquery/dist/jquery.min',
-    masonry: '../components/masonry/masonry.pkgd'
+    jquery: '../components/jquery/dist/jquery.min'
   }
 });
