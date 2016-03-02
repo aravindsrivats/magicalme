@@ -19,10 +19,10 @@ body {
   height: 100%;
   font-size: 13px;
   color: #a8aaaf;
-  overflow: hidden;
   font-family: @defaultFont;
   font-size: 100%;
   background: #1c1d21;
+  overflow: hidden;
 }
 a {
   text-decoration: none;
@@ -109,7 +109,7 @@ a {
           display: none;
           li {
             a {
-              padding: 10px 0 10px 40px;
+              padding: 15px 0 15px 40px;
             }
           }
         }
@@ -155,27 +155,22 @@ section.scrolls {
     }
   }
   .scroll-area {
-    height: 100%;
+    height: calc(~'100% - 50px');
     width: 100%;
     margin-top: 2px;
     position: relative;
-    display: flex;
-    flex-direction: row;
+    overflow: hidden;
     .scroll {
-      opacity: 0;
       width: 98%;
-      min-height: 98%;
-      height: auto;
+      opacity: 0;
+      height: 0;
       background: #1c1d21;
-      padding: 1%;
-      position: absolute;
+      padding: 0 1%;
       font-size: 14px;
-      display: flex;
+      display: none;
       flex-direction: row;
       line-height: 25px;
       z-index: 600;
-      top: 0;
-      left: 0;
       transition: 0.5s all ease;
       .line-num {
         width: 30px;
@@ -211,9 +206,17 @@ section.scrolls {
           width: 85%;
         }
       }
+      img {
+        display: block;
+        margin: auto auto;
+        border: none;
+      }
       &.shown {
         opacity: 1;
-        z-index: 601;
+        display: flex;
+        height: auto;
+        padding: 1%;
+        z-index: 641;
       }
     }
   }

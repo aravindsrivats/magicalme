@@ -40,16 +40,13 @@ html
                 span.fa.fa-folder
                 | assets
               ul
-                li
-                  a
-                    span.fa
-                    span.fa.fa-file-text-o
-                    | project# 1
-                li
-                  a
-                    span.fa
-                    span.fa.fa-file-text-o
-                    | project# 2
+                each project in projects
+                  if project.img.length > 0
+                    li
+                      a(href='#'+project.img.substr(0, project.img.indexOf('.')))
+                        span.fa
+                        span.fa.fa-file-text-o
+                        = project.img
             li
               a(href='#projects')
                 span.fa
@@ -58,14 +55,18 @@ html
       section.scrolls
         div.title-bar
           ul
-            li#magical-me
+            li#magical-me(rel='me')
               | magical-me
               span.icon.fa
-            li#projects
+            li#projects(rel='ps')
               | projects.json
-              span.icon.fa
+              span.icon.fa 
+            each project in projects
+              li(id=project.img.substr(0, project.img.indexOf('.')), rel='img', data=project.img)
+                = project.img
+                span.icon.fa
         div.scroll-area
-          div.scroll#0
+          div.scroll#me
             div.line-num
               p.higher  1
               p 2
@@ -106,35 +107,46 @@ html
                 a(href='https://github.com/aravindsrivats' target='_blank')
                   span.fa.fa-github.fa-lg
                 span.tag &lt;/a&gt;
-          div.scroll#1
+          div.scroll#ps
             div.general 
               p
-              | [
-              each project, index in projects
-                | {
-                | #[br]
-                span.json-var
-                  | "title": "
-                  span.value
-                    = project.title
-                  | ",
-                | #[br]
-                span.json-var
-                  | "description": "
-                  span.value
-                    = project.description
-                  | ",
-                | #[br]
-                span.json-var
-                  | "link": "
-                  a(href=project.url target='_blank')  
+                | [
+                each project, index in projects
+                  | {
+                  | #[br]
+                  span.json-var
+                    | "title": "
                     span.value
-                      = project.url
-                  | "
-                | #[br]
-                | },  
-              | ]
-          div.scroll#2
+                      = project.title
+                    | ",
+                  | #[br]
+                  span.json-var
+                    | "description": "
+                    span.value
+                      = project.description
+                    | ",
+                  | #[br]
+                  span.json-var
+                    | "image": "
+                    a(href='#'+project.img.substr(0, project.img.indexOf('.'))).project-image
+                      span.value
+                        = project.img
+                    | ",
+                  | #[br]
+                  span.json-var
+                    | "link": "
+                    a(href=project.url target='_blank')  
+                      span.value
+                        = project.url
+                    | "
+                  | #[br]
+                  | },  
+                | ]
+          div.scroll#img
+            div.general
+              img#display
+          br(clear='all')
             
     script(src='http://code.jquery.com/jquery-1.12.0.min.js', type='text/javascript')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js', type='text/javascript')
     script(src='../js/app.js' type='text/javascript')
