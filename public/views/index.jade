@@ -40,7 +40,7 @@ html
                     li
                       a(href='#'+project.img.substr(0, project.img.indexOf('.')))
                         span.fa
-                        span.fa.fa-file-text-o
+                        span.fa.fa-file-image-o
                         = project.img
             li
               a(href='#magical-me')
@@ -337,7 +337,14 @@ html
                   a(href='https://github.com/aravindsrivats/magicalme' target='blank') https://github.com/aravindsrivats/magicalme
                   | ) 
           br(clear='all')
-            
+        div.status
+          p.left
+            span#path
+          p.right
+            span LF  UTF-8  
+            span#file-type
+            span.fa.fa-code-fork
+            | master
     script(src='http://code.jquery.com/jquery-1.12.0.min.js', type='text/javascript')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js', type='text/javascript')
     script(src='../js/app.js' type='text/javascript')

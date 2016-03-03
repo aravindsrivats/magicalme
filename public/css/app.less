@@ -231,6 +231,33 @@ section.scrolls {
       }
     }
   }
+  .status {
+    position: fixed;
+    opacity: 0;
+    bottom: 0;
+    padding: 10px 10px 15px 10px;
+    width: 78%;
+    z-index: 701;
+    font-size: 11px;
+    background: #1c1d21;
+    transition: 0.3s all ease;
+    p {
+      width: 50%;
+      display: inline-block;
+      span {
+        margin: 0 5px;
+      }
+    }
+    .left {
+      text-align: left;
+    }
+    .right {
+      text-align: right;
+    }
+    &.shown {
+      opacity: 1;
+    }
+  }
 }
 .clearfix {
   zoom: 1;
