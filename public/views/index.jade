@@ -29,11 +29,6 @@ html
                 span.fa.fa-chevron-right.fa-small.arrow
                 span.fa.fa-folder
                 | .git
-            li
-              a(href='#magical-me')
-                span.fa
-                span.fa.fa-file-text-o
-                | magical-me
             li#assets
               a
                 span.fa.fa-chevron-right.fa-small.arrow
@@ -48,6 +43,11 @@ html
                         span.fa.fa-file-text-o
                         = project.img
             li
+              a(href='#magical-me')
+                span.fa
+                span.fa.fa-file-text-o
+                | magical-me.html
+            li
               a(href='#projects')
                 span.fa
                 span.fa.fa-file-text-o
@@ -61,7 +61,7 @@ html
         div.title-bar
           ul
             li#magical-me(rel='me')
-              | magical-me
+              | magical-me.html
               span.icon.fa
             li#projects(rel='ps')
               | projects.json
@@ -86,6 +86,20 @@ html
               p 8
             div.general 
               p
+                span.tag &lt;DOCTYPE&gt;
+                | #[br]
+                span.tag &lt;html&gt;
+                | #[br]
+                span.tag &lt;head&gt;
+                | #[br]
+                span.tag &lt;title&gt;
+                | magical.me
+                span.tag &lt;/title&gt;
+                | #[br]
+                span.tag &lt;/head&gt;
+                | #[br]
+                span.tag &lt;body&gt;
+                | #[br]
                 span.tag &lt;p&gt;
                 | I am
                 span.tag &lt;span class='title'&gt;
@@ -94,8 +108,11 @@ html
                 span.tag &lt;/span&gt; 
                 | and I develop awesome web applications and stunning mobile apps.  If you have a web/mobile application that requires a golden hand, you've come to the right place.  Take a look around to see my creations.
                 span.tag &lt;/p&gt;
+                span.tag &lt;br /&gt;
                 | #[br]
+                span.tag &lt;br /&gt;
                 | #[br]
+                span.tag &lt;br /&gt;
                 | #[br]
                 span.tag &lt;p&gt;
                 | Find me at:
@@ -115,6 +132,10 @@ html
                 a(href='https://github.com/aravindsrivats' target='_blank')
                   span.fa.fa-github.fa-lg
                 span.tag &lt;/a&gt;
+                | #[br]
+                span.tag &lt;/body&gt;
+                | #[br]
+                span.tag &lt;/html&gt;
           div.scroll#ps
             div.general 
               p
