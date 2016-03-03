@@ -52,6 +52,11 @@ html
                 span.fa
                 span.fa.fa-file-text-o
                 | projects.json
+            li
+              a(href='#readme')
+                span.fa
+                span.fa.fa-file-text-o
+                | about.md
       section.scrolls
         div.title-bar
           ul
@@ -60,6 +65,9 @@ html
               span.icon.fa
             li#projects(rel='ps')
               | projects.json
+              span.icon.fa 
+            li#readme(rel='ab')
+              | about.md
               span.icon.fa 
             each project in projects
               li(id=project.img.substr(0, project.img.indexOf('.')), rel='img', data=project.img)
@@ -145,6 +153,99 @@ html
           div.scroll#img
             div.general
               img#display
+          div.scroll#ab
+            div.line-num
+              p 1
+              p 2
+              p 3
+              p 4
+              p 5
+              p 6
+              p 7
+              p 8
+              p 9
+              p 10
+              p 11
+              p 12
+              p 13
+              p 14
+              p 15
+              p 16
+              p 17
+              p 18
+              p 19
+              p 20
+              p 21
+              p 22
+              p 23
+            div.general 
+              p
+                span.md # about
+                | #[br]
+                | #[br]
+                span.md ### who am i?
+                | #[br]  
+                | aravind srivatsan
+                | #[br]  
+                | homo sapien, male, 22
+                | #[br]  
+                | based out of Chennai, India
+                | #[br]  
+                | currently working in PayPal during the day and freelancing in the night
+                | #[br]
+                | #[br]
+                span.md ### what do i do?
+                | #[br]  
+                | like the other page said, I develop web and mobile applications.
+                | #[br]  
+                | sometimes play the keyboard
+                | #[br]  
+                | and 
+                span.md 
+                  i _other_ 
+                | sometimes dance (but not together)
+                | #[br]  
+                | watch a lot of movies and tv series
+                | #[br]  
+                | #[br]  
+                span.md ### what's this?
+                | #[br]
+                | after about 3 iterations of designs I couldn't decide which one to go with. and then one day, I just liked 
+                span.md [
+                | atom.io's
+                span.md ] 
+                span.md-link 
+                  | ( 
+                  a(href='https://atom.io' target='blank') https://atom.io 
+                  | ) 
+                | UI (atom-material theme) and I started designing based on its design and here's the result.  
+                | #[br]
+                | #[br]
+                span.md ### links
+                | #[br]
+                span.md [
+                | atom-material-ui
+                span.md ] 
+                span.md-link
+                  | (
+                  a(href='https://atom.io/themes/atom-material-ui' target='blank') https://atom.io/themes/atom-material-ui
+                  | )
+                | #[br]
+                span.md [
+                | an-old-hope-syntax
+                span.md ] 
+                span.md-link 
+                  | (
+                  a(href='https://atom.io/themes/an-old-hope-syntax' target='blank') https://atom.io/themes/an-old-hope-syntax
+                  | )  
+                | #[br]
+                span.md [
+                | github source
+                span.md ] 
+                span.md-link 
+                  | (
+                  a(href='https://github.com/aravindsrivats/magicalme' target='blank') https://github.com/aravindsrivats/magicalme
+                  | ) 
           br(clear='all')
             
     script(src='http://code.jquery.com/jquery-1.12.0.min.js', type='text/javascript')

@@ -184,26 +184,37 @@ section.scrolls {
       }
       .general {
         height: auto;
-        .tag {
-          color: #515156;
-        }
-        .title {
-          color: @primaryColor;
-          font-size: 24px;
-          font-weight: bold;
-        }
-        .json-var {
-          margin-left: 25px;
-        }
-        .value {
-          color: #fff;
-          transition: 0.3s all ease;
-        }
-        a:hover .value {
-          color: @primaryColor;
-        }
         p {
-          width: 85%;
+          .tag {
+            color: #515156;
+          }
+          .title {
+            color: @primaryColor;
+            font-size: 24px;
+            font-weight: bold;
+          }
+          .json-var {
+            margin-left: 25px;
+          }
+          .value {
+            color: #fff;
+            transition: 0.3s all ease;
+          }
+          a:hover .value {
+            color: @primaryColor;
+          }
+          .md {
+            color: @md;
+          }
+          .md-link {
+            color: @mdlink;
+            a {
+              color: @mdlink;
+              &:hover {
+                color: @mdlink;
+              }
+            }
+          }
         }
       }
       img {
