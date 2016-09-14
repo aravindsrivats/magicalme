@@ -1,6 +1,12 @@
 'use strict';
 
 module.exports = [{
+  title: 'Bee Home Healthcare',
+  img: 'beehomehealthcare.png',
+  description: 'Bee Home Healthcare provides a wide range of health care services that improve health and quality of life for those in need of faster and easier recovery from the comfort of their home',
+  stack: ['html5', 'css3', 'php'],
+  url: 'http://beehomehealthcare.com'
+}, {
   title: 'Aakash Pustak',
   img: 'aakash.png',
   description: 'An ePub reader for the Aakash Tablets to read the NCERT textbooks of the Government of India.',
